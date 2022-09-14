@@ -1,6 +1,5 @@
 use clap::Parser;
 use e_core_detection::{get_pe_partition_async, test_core};
-use tokio;
 
 #[derive(Parser, Debug)]
 #[clap(author, version, about, long_about = None)]
@@ -14,13 +13,12 @@ struct Args {
     all: bool,
 }
 
-
 #[tokio::main]
 async fn main() {
     let args = Args::parse();
 
     if args.single {
-        unsafe { test_core() }
+        unsafe { println!("{}", test_core()) }
         std::process::exit(0)
     }
 
