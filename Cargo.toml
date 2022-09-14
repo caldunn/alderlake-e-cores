@@ -1,0 +1,26 @@
+[package]
+name = "cpu-e-core"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name ="e_core_detection"
+path = "src/lib.rs"
+
+[[bin]]
+name = "coretype"
+path = "src/bin.rs"
+
+[dependencies]
+tokio = { version = "1.21.0", features = ["full"] }
+async-process = "1.5.0"
+futures = "0.3.24"
+num_cpus = "1.13.1"
+clap = { version = "3.2.21", features= ["derive"] }
+
+[dev-dependencies]
+criterion = { version = "0.4.0", features = ["async_tokio"] }
+
+[[bench]]
+name = "my_benchmark"
+harness = false
