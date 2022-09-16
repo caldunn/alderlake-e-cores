@@ -200,7 +200,7 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let _result = get_pe_partition_sync().unwrap();
+        let _result = get_pe_partition_sync();
         assert_eq!(true, true);
     }
 }
